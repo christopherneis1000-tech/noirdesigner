@@ -1,0 +1,7 @@
+
+<svg width="1000" height="600" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1000" height="600" fill="#050507"/>
+  <path d="M500 100 L700 500 H300 Z" fill="none" stroke="#d6d6d6" stroke-width="10"/>
+  <path d="M500 200 L600 450 H400 Z" fill="#d6d6d6" opacity="0.2"/>
+  <text x="350" y="550" font-family="serif" font-size="40" fill="#d6d6d6">SHADOW CORP</text>
+</svg>
