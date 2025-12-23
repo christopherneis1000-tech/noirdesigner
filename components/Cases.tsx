@@ -155,7 +155,7 @@ const Cases: React.FC = () => {
       role: "Web Design, Animation",
       stack: "React, Tailwind, Scroll Animation",
       impact: "User Engagement +28%",
-      liveLink: "#",
+      liveLink: "https://cnpersonal.netlify.app/",
       evidenceLink: "#"
     }
   ];
