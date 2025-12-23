@@ -129,7 +129,7 @@ const Cases: React.FC = () => {
       role: "UI/UX, Visual Design",
       stack: "React, Firebase",
       impact: "+35% Conversion / Time-on-page +18%",
-      liveLink: "#",
+      liveLink: "https://katzenverwaltung-teresa.netlify.app/",
       evidenceLink: "#"
     },
     {
@@ -142,6 +142,19 @@ const Cases: React.FC = () => {
       role: "Brand Identity, Visual Design",
       stack: "Next.js, Supabase",
       impact: "Brand Recognition +42%",
+      liveLink: "https://parallax-painter.netlify.app/",
+      evidenceLink: "#"
+    },
+    {
+      caseNumber: "03",
+      title: "THE HUNGARIAN TOOTHFAIRY",
+      category: "Web Design",
+      year: "2024",
+      image: "assets/toothfairy.png",
+      voiceover: "In den falschen Kreisen brauchst Du den richtigen Namen. Sonst kann es sein, dass Du aufwachst in Betonschuhen. Unter Wasser.",
+      role: "Web Design, Animation",
+      stack: "React, Tailwind, Scroll Animation",
+      impact: "User Engagement +28%",
       liveLink: "#",
       evidenceLink: "#"
     }
