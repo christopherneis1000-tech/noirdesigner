@@ -1,5 +1,7 @@
 
 import React from 'react';
+import AIButton from './AIButton';
+import { Search } from 'lucide-react';
 
 interface CaseItemProps {
   caseNumber: string;
@@ -100,22 +102,18 @@ const CaseItem: React.FC<CaseItemProps> = ({
           {/* Action Buttons */}
           <div className="case-item__buttons">
             {liveLink && (
-              <a 
-                href={liveLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="case-item__button-primary"
-              >
+              <AIButton href={liveLink}>
                 Open Case
-              </a>
+              </AIButton>
             )}
             {evidenceLink && (
               <a 
                 href={evidenceLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="case-item__button-secondary"
+                className="case-item__secondary-button"
               >
+                <Search size={14} />
                 More Evidence
               </a>
             )}
