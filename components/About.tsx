@@ -62,7 +62,9 @@ const About: React.FC = () => {
                     <h4 className="about-dossier__stat-title">Tools</h4>
                     <div className="about-dossier__tools">
                         <span className="about-dossier__tool">Figma</span>
+                        <span className="about-dossier__tool">Javascript</span>
                         <span className="about-dossier__tool">React</span>
+                        <span className="about-dossier__tool">Datenbanken</span>
                         <span className="about-dossier__tool">AI</span>
                     </div>
                 </div>

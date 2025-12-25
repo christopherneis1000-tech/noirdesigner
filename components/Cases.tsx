@@ -12,7 +12,7 @@ interface CaseItemProps {
   voiceover: string;
   role: string;
   stack: string;
-  impact?: string;
+  mission?: string;
   liveLink?: string;
   evidenceLink?: string;
 }
@@ -26,7 +26,7 @@ const CaseItem: React.FC<CaseItemProps> = ({
   voiceover, 
   role, 
   stack, 
-  impact,
+  mission,
   liveLink,
   evidenceLink 
 }) => {
@@ -90,10 +90,10 @@ const CaseItem: React.FC<CaseItemProps> = ({
                 <span className="case-item__info-value">{stack}</span>
               </div>
               
-              {impact && (
+              {mission && (
                 <div className="case-item__info-item case-item__impact">
-                  <span className="case-item__info-label">Impact</span>
-                  <span className="case-item__impact-value">{impact}</span>
+                  <span className="case-item__info-label">Mission</span>
+                  <span className="case-item__impact-value">{mission}</span>
                 </div>
               )}
             </div>
@@ -130,12 +130,12 @@ const Cases: React.FC = () => {
       caseNumber: "01",
       title: "THE MISSING CAT MANAGER",
       category: "UI/UX",
-      year: "2024",
+      year: "2025",
       image: "assets/catmanager.png",
       voiceover: "Die Katzen waren verloren im Labyrinth der Buttons, bis ich die Spuren neu ordnete und ihnen einen Weg durch die Dunkelheit zeigte.",
       role: "UI/UX, Visual Design",
       stack: "React, Firebase",
-      impact: "+35% Conversion / Time-on-page +18%",
+      mission: "Multiuser-Verwaltung für ein Tierheim",
       liveLink: "https://katzenverwaltung-teresa.netlify.app/",
       evidenceLink: "#"
     },
@@ -143,25 +143,25 @@ const Cases: React.FC = () => {
       caseNumber: "02",
       title: "THE CRAZY PAINTER",
       category: "Brand Design",
-      year: "2023",
+      year: "2025",
       image: "assets/painter.png",
       voiceover: "Ein kreativer Auftritt ist wie ein Name. Wenn er nichts bedeutet, bist du so gut wie tot. Ich gab dieser Marke eine Show, die man nicht vergisst.",
       role: "Brand Identity, Visual Design",
       stack: "Next.js, Supabase",
-      impact: "Brand Recognition +42%",
+      mission: "Showcase der Bilder einer Malerin mit Backend zur Selbstverwaltung",
       liveLink: "https://parallax-painter.netlify.app/",
       evidenceLink: "#"
     },
     {
       caseNumber: "03",
       title: "THE HUNGARIAN TOOTHFAIRY",
-      category: "Web Design",
-      year: "2024",
+      category: "Animation",
+      year: "2025",
       image: "assets/toothfairy.png",
       voiceover: "In den falschen Kreisen brauchst Du den richtigen Namen. Sonst kann es sein, dass Du aufwachst in Betonschuhen. Unter Wasser.",
       role: "Web Design, Animation",
       stack: "React, Tailwind, Scroll Animation",
-      impact: "User Engagement +28%",
+      mission: "Proof of concept OnScroll Parallax Animation",
       liveLink: "https://cnpersonal.netlify.app/",
       evidenceLink: "#"
     }
