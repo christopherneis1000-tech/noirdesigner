@@ -53,9 +53,7 @@ const About: React.FC = () => {
                 <p className="about-dossier__paragraph">
                     Ich jage keine Geister. Ich jage tote Links, gebrochene Layouts und User, die sich im Dunkeln verloren haben. Designer, Entwickler, Problem-Solver – mit einem Auge für Details und einem zweiten für das große Ganze.
                 </p>
-                <p className="about-dossier__paragraph">
-                    Mein Werkzeug? Klarheit. Mein Ziel? Die absolute Wahrheit des Nutzers. Jedes Projekt ist ein Tatort, den ich säubern muss.
-                </p>
+                
             </div>
 
             {/* Stats Section */}
@@ -65,7 +63,6 @@ const About: React.FC = () => {
                     <div className="about-dossier__tools">
                         <span className="about-dossier__tool">Figma</span>
                         <span className="about-dossier__tool">React</span>
-                        <span className="about-dossier__tool">Tailwind</span>
                         <span className="about-dossier__tool">AI</span>
                     </div>
                 </div>
