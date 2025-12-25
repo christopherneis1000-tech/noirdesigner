@@ -9,13 +9,24 @@ import Footer from './components/Footer';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center">
-      <main className="w-full max-w-[1100px] px-4 md:px-8 py-12 space-y-24">
-        <Hero />
-        <About />
-        <Cases />
-        <Process />
-        <Contact />
+    <div className="app">
+      <div className="app__grain" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/asfalt-dark.png')" }}></div>
+      <main className="app__main">
+        <div className="app__section">
+          <Hero />
+        </div>
+        <div className="app__section">
+          <About />
+        </div>
+        <div className="app__section">
+          <Cases />
+        </div>
+        <div className="app__section">
+          <Process />
+        </div>
+        <div className="app__section">
+          <Contact />
+        </div>
       </main>
       <Footer />
     </div>

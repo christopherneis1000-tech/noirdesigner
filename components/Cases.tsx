@@ -29,82 +29,82 @@ const CaseItem: React.FC<CaseItemProps> = ({
   evidenceLink 
 }) => {
   return (
-    <div className="w-full border-8 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] mb-16 bg-[#08080a]">
+    <div className="case-item">
       {/* Header */}
-      <div className="bg-black p-4 border-b-4 border-black flex justify-between items-center">
-        <h3 className="font-noir-display text-xl md:text-2xl text-white uppercase tracking-tight">
+      <div className="case-item__header">
+        <h3 className="case-item__title">
           CASE #{caseNumber} – {title}
         </h3>
-        <span className="font-noir-display text-[10px] text-slate-500 border border-slate-800 px-3 py-1 uppercase tracking-wider">
+        <span className="case-item__meta">
           {category} · {year}
         </span>
       </div>
 
       {/* Main Content */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+      <div className="case-item__content">
         {/* Left: Project Image */}
-        <div className="relative h-[400px] lg:h-[500px] overflow-hidden bg-black">
+        <div className="case-item__image-wrapper">
           <img 
             src={image} 
             alt={title} 
-            className="w-full h-full object-cover grayscale contrast-[1.4] brightness-[0.6] hover:brightness-75 transition-all duration-700"
+            className="case-item__image"
           />
           {/* Evidence Stamp */}
-          <div className="absolute top-6 right-6 bg-[#ff3b3b] text-white font-noir-display text-xs px-4 py-2 rotate-12 shadow-lg border-2 border-black uppercase tracking-wider">
+          <div className="case-item__evidence">
             Evidence A
           </div>
           
           {/* Yellow box for case 03 */}
           {caseNumber === "03" && (
-            <div className="absolute bottom-6 left-6 right-6">
-              <div className="monologue-box text-xs py-2 px-4 shadow-none bg-white/95 border-2 border-black">
+            <div className="about-portrait__monologue">
+              <div className="monologue-box">
                 "Wieviele Zähne hast du, Batman?"
               </div>
             </div>
           )}
           
-          <div className="absolute inset-0 shadow-[inset_0_0_60px_rgba(0,0,0,0.6)] pointer-events-none"></div>
+          <div className="case-item__image-shadow"></div>
         </div>
 
         {/* Right: Case Details */}
-        <div className="p-8 md:p-10 flex flex-col justify-between bg-[#0a0a0d] border-l-4 border-black">
+        <div className="case-item__details">
           <div>
             {/* Voiceover */}
-            <div className="mb-8">
-              <p className="font-noir-voiceover text-base md:text-lg text-slate-300 leading-relaxed italic">
+            <div className="case-item__voiceover">
+              <p className="case-item__voiceover-text">
                 "{voiceover}"
               </p>
             </div>
             
             {/* Details List */}
-            <div className="space-y-4 mb-8">
-              <div className="border-l-4 border-slate-800 pl-4">
-                <span className="font-noir-display text-[10px] text-slate-600 uppercase tracking-widest block mb-1">Role</span>
-                <span className="font-noir-voiceover text-sm text-white">{role}</span>
+            <div className="case-item__info">
+              <div className="case-item__info-item">
+                <span className="case-item__info-label">Role</span>
+                <span className="case-item__info-value">{role}</span>
               </div>
               
-              <div className="border-l-4 border-slate-800 pl-4">
-                <span className="font-noir-display text-[10px] text-slate-600 uppercase tracking-widest block mb-1">Stack</span>
-                <span className="font-noir-voiceover text-sm text-white">{stack}</span>
+              <div className="case-item__info-item">
+                <span className="case-item__info-label">Stack</span>
+                <span className="case-item__info-value">{stack}</span>
               </div>
               
               {impact && (
-                <div className="border-l-4 border-[#ff3b3b] pl-4 bg-black/40 py-3">
-                  <span className="font-noir-display text-[10px] text-slate-600 uppercase tracking-widest block mb-1">Impact</span>
-                  <span className="font-noir-voiceover text-sm text-white font-bold">{impact}</span>
+                <div className="case-item__info-item case-item__impact">
+                  <span className="case-item__info-label">Impact</span>
+                  <span className="case-item__impact-value">{impact}</span>
                 </div>
               )}
             </div>
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3">
+          <div className="case-item__buttons">
             {liveLink && (
               <a 
                 href={liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 bg-white text-black font-noir-display py-4 text-center text-sm hover:bg-slate-200 transition-all border-b-4 border-slate-500 active:border-b-0 active:translate-y-1 uppercase tracking-tight"
+                className="case-item__button-primary"
               >
                 Open Case
               </a>
@@ -114,7 +114,7 @@ const CaseItem: React.FC<CaseItemProps> = ({
                 href={evidenceLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 border-4 border-slate-600 text-white font-noir-display py-4 text-center text-sm hover:bg-white/10 transition-all uppercase tracking-tight"
+                className="case-item__button-secondary"
               >
                 More Evidence
               </a>
@@ -170,12 +170,12 @@ const Cases: React.FC = () => {
   ];
 
   return (
-    <section id="cases" className="w-full">
-      <div className="mb-16 flex items-end gap-4">
-        <h2 className="text-5xl md:text-6xl font-noir-display text-white tracking-tighter">
-          THE <span className="text-slate-800 uppercase">Case Files</span>
+    <section id="cases" className="cases-section">
+      <div className="cases-header">
+        <h2 className="cases-title">
+          THE <span className="cases-title-accent">Case Files</span>
         </h2>
-        <div className="h-[2px] flex-grow bg-slate-900 mb-2"></div>
+        <div className="cases-divider"></div>
       </div>
       <div>
         {cases.map((c) => (

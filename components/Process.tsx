@@ -54,53 +54,53 @@ const Process: React.FC = () => {
   ];
 
   return (
-    <section className="w-full">
-      <div className="mb-16">
-        <h2 className="text-5xl md:text-6xl font-noir-display text-white tracking-tighter mb-4">
-          HOW THE <span className="text-slate-800 uppercase">Detective Works</span>
+    <section className="process-section">
+      <div className="process-header">
+        <h2 className="process-title">
+          HOW THE <span className="process-title-accent">Detective Works</span>
         </h2>
-        <p className="font-noir-voiceover text-slate-400 text-base italic max-w-2xl">
+        <p className="process-subtitle">
           "Jeder Fall folgt dem gleichen Muster. Nur wer die Schritte kennt, findet die Wahrheit."
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="process-grid">
         {steps.map((step, idx) => (
-          <div key={idx} className="comic-panel border-black bg-[#08080a] flex flex-col">
+          <div key={idx} className="process-step comic-panel">
             {/* Header */}
-            <div className="bg-black p-4 border-b-4 border-black">
-              <span className="font-noir-display text-[10px] text-slate-600 block mb-1 uppercase tracking-widest">Phase {step.number}</span>
-              <h3 className="font-noir-display text-xl text-white leading-tight mb-1">{step.title}</h3>
-              <p className="font-noir-voiceover text-[10px] text-slate-500 italic">{step.subtitle}</p>
+            <div className="process-step__header">
+              <span className="process-step__phase">Phase {step.number}</span>
+              <h3 className="process-step__title">{step.title}</h3>
+              <p className="process-step__subtitle">{step.subtitle}</p>
             </div>
 
             {/* Image */}
-            <div className="relative overflow-hidden bg-black h-[200px]">
-              <img src={step.image} alt={step.title} className="w-full h-full object-cover brightness-75" />
-              <div className="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.6)] pointer-events-none"></div>
+            <div className="process-step__image">
+              <img src={step.image} alt={step.title} className="process-step__img" />
+              <div className="process-step__image-shadow"></div>
             </div>
 
             {/* Content */}
-            <div className="p-6 flex-grow flex flex-col justify-between">
+            <div className="process-step__content">
               <div>
-                <p className="font-noir-voiceover text-xs text-slate-400 leading-relaxed italic mb-6">
+                <p className="process-step__description">
                   "{step.desc}"
                 </p>
                 
                 {/* Bullet Points */}
-                <ul className="space-y-2">
+                <ul className="process-step__list">
                   {step.points.map((point, pointIdx) => (
-                    <li key={pointIdx} className="flex items-start gap-2">
-                      <span className="text-[#ff3b3b] mt-1">▸</span>
-                      <span className="font-noir-voiceover text-[11px] text-slate-300 leading-tight">{point}</span>
+                    <li key={pointIdx} className="process-step__item">
+                      <span className="process-step__bullet">▸</span>
+                      <span className="process-step__text">{point}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
               {/* Footer Decoration */}
-              <div className="mt-6 pt-4 border-t border-slate-900 flex justify-end">
-                <div className="w-8 h-1 bg-slate-800"></div>
+              <div className="process-step__footer">
+                <div className="process-step__decoration"></div>
               </div>
             </div>
           </div>
@@ -111,3 +111,4 @@ const Process: React.FC = () => {
 };
 
 export default Process;
+
