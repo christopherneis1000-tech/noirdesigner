@@ -140,6 +140,9 @@ body::before {
   border: none;
   box-shadow: none;
   border-radius: 0;
+  --spotlight-x: 50%;
+  --spotlight-y: 50%;
+  --spotlight-radius: 256px;
 }
 
 .hero__background {
@@ -166,10 +169,42 @@ body::before {
   z-index: 10;
 }
 
+.hero__beam {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 12;
+  pointer-events: none;
+  opacity: 0.4;
+  mix-blend-mode: screen;
+}
+
+.hero__beam-polygon {
+  transform-origin: 50% 0%;
+  will-change: transform;
+  transform: translateX(calc(var(--spotlight-x) - 50%)) translateZ(0);
+}
+
+.hero__scanlines {
+  position: absolute;
+  inset: 0;
+  z-index: 13;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.03) 0px,
+    transparent 1px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 3px
+  );
+  opacity: 0.4;
+}
+
 .hero__grain {
   position: absolute;
   inset: 0;
-  z-index: 10;
+  z-index: 14;
   opacity: 0.03;
   mix-blend-mode: overlay;
   pointer-events: none;
@@ -183,9 +218,44 @@ body::before {
   max-width: 80rem;
 }
 
+/* DIM LAYER - Bottom content with reduced opacity and saturation */
+.hero__content--dim {
+  opacity: 0.35;
+  filter: saturate(0.5);
+}
+
+/* BRIGHT LAYER - Top content with spotlight mask */
+.hero__content--bright {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 25;
+  pointer-events: none;
+  will-change: mask-position;
+  -webkit-mask-image: radial-gradient(
+    circle var(--spotlight-radius) at var(--spotlight-x) var(--spotlight-y),
+    black 0%,
+    black 50%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    circle var(--spotlight-radius) at var(--spotlight-x) var(--spotlight-y),
+    black 0%,
+    black 50%,
+    transparent 100%
+  );
+}
+
+.hero__content--bright * {
+  pointer-events: none;
+}
+
 .hero__tag {
   display: inline-block;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'IBM Plex Mono', 'Oswald', monospace;
   font-size: 10px;
   letter-spacing: 0.2em;
   color: #94a3b8;
