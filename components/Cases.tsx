@@ -54,6 +54,15 @@ const CaseItem: React.FC<CaseItemProps> = ({
             Evidence A
           </div>
           
+          {/* Yellow box for case 03 */}
+          {caseNumber === "03" && (
+            <div className="absolute bottom-6 left-6 right-6">
+              <div className="monologue-box text-xs py-2 px-4 shadow-none bg-white/95 border-2 border-black">
+                "Wieviele Zähne hast du, Batman?"
+              </div>
+            </div>
+          )}
+          
           <div className="absolute inset-0 shadow-[inset_0_0_60px_rgba(0,0,0,0.6)] pointer-events-none"></div>
         </div>
 
