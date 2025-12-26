@@ -158,9 +158,9 @@ const Cases: React.FC = () => {
       category: "Animation",
       year: "2025",
       image: "assets/toothfairy.png",
-      voiceover: "In den falschen Kreisen brauchst Du den richtigen Namen. Sonst kann es sein, dass Du aufwachst in Betonschuhen. Unter Wasser.",
+      voiceover: "Immer in Bewegung bleiben. Sonst kann es dich mehr kosten als nur ein paar Zähne.",
       role: "Web Design, Animation",
-      stack: "React, Tailwind, Scroll Animation",
+      stack: "React, FireBase, Scroll Animation",
       mission: "Proof of concept OnScroll Parallax Animation",
       liveLink: "https://cnpersonal.netlify.app/",
       evidenceLink: "#"
