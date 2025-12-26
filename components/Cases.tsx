@@ -162,7 +162,7 @@ const Cases: React.FC = () => {
       role: "Web Design, Animation",
       stack: "React, FireBase, Scroll Animation",
       mission: "Proof of concept OnScroll Parallax Animation",
-      liveLink: "https://cnpersonal.netlify.app/",
+      liveLink: "https://cnpersonal.christopherneis1000.workers.dev/",
       evidenceLink: "#"
     }
   ];
