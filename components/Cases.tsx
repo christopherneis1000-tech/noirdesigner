@@ -149,7 +149,7 @@ const Cases: React.FC = () => {
       role: "Brand Identity, Visual Design",
       stack: "Next.js, Supabase",
       mission: "Showcase der Bilder einer Malerin mit Backend zur Selbstverwaltung",
-      liveLink: "https://parallax-painter.netlify.app/",
+      liveLink: "https://painter-bice.vercel.app/",
       evidenceLink: "#"
     },
     {
