@@ -1,10 +1,100 @@
 import React, { useEffect, useRef } from 'react';
 
+interface Raindrop {
+  x: number;
+  y: number;
+  speed: number;
+  length: number;
+  opacity: number;
+}
+
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   const targetRef = useRef({ x: 50, y: 50, radius: 256 });
   const currentRef = useRef({ x: 50, y: 50, radius: 256 });
   const animationFrameRef = useRef<number>();
+  const raindropsRef = useRef<Raindrop[]>([]);
+  const mousePixelRef = useRef({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d', { alpha: true });
+    if (!ctx) return;
+
+    // Set canvas size
+    const resizeCanvas = () => {
+      if (!canvas || !heroRef.current) return;
+      const rect = heroRef.current.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = rect.height;
+    };
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Initialize raindrops (fewer for performance)
+    const initRaindrops = () => {
+      raindropsRef.current = [];
+      const count = Math.min(150, Math.floor((canvas.width * canvas.height) / 8000));
+      for (let i = 0; i < count; i++) {
+        raindropsRef.current.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          speed: 3 + Math.random() * 5,
+          length: 15 + Math.random() * 25,
+          opacity: 0.15 + Math.random() * 0.25
+        });
+      }
+    };
+    initRaindrops();
+
+    const animateRain = () => {
+      if (!canvas || !ctx) return;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const spotlightX = mousePixelRef.current.x;
+      const spotlightY = mousePixelRef.current.y;
+      const spotlightRadius = currentRef.current.radius;
+
+      raindropsRef.current.forEach((drop) => {
+        // Update position
+        drop.y += drop.speed;
+        
+        // Reset if off screen
+        if (drop.y > canvas.height) {
+          drop.y = -drop.length;
+          drop.x = Math.random() * canvas.width;
+        }
+
+        // Calculate distance to spotlight
+        const dx = drop.x - spotlightX;
+        const dy = drop.y - spotlightY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        // Illuminate drops within spotlight radius
+        let brightness = drop.opacity;
+        if (distance < spotlightRadius) {
+          const illumination = 1 - (distance / spotlightRadius);
+          brightness = drop.opacity + (illumination * 0.6);
+        }
+
+        // Draw raindrop
+        ctx.strokeStyle = `rgba(200, 220, 255, ${brightness})`;
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(drop.x, drop.y);
+        ctx.lineTo(drop.x, drop.y + drop.length);
+        ctx.stroke();
+      });
+    };
+
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+    };
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -13,6 +103,12 @@ const Hero: React.FC = () => {
       const rect = heroRef.current.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width) * 100;
       const y = ((e.clientY - rect.top) / rect.height) * 100;
+      
+      // Store pixel coordinates for rain illumination
+      mousePixelRef.current = {
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top
+      };
       
       // Check if hovering over interactive elements
       const target = e.target as HTMLElement;
@@ -41,6 +137,50 @@ const Hero: React.FC = () => {
       heroRef.current.style.setProperty('--spotlight-y', `${currentRef.current.y}%`);
       heroRef.current.style.setProperty('--spotlight-radius', `${currentRef.current.radius}px`);
       
+      // Animate rain on canvas
+      if (canvasRef.current) {
+        const ctx = canvasRef.current.getContext('2d', { alpha: true });
+        if (ctx) {
+          const canvas = canvasRef.current;
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+          const spotlightX = mousePixelRef.current.x;
+          const spotlightY = mousePixelRef.current.y;
+          const spotlightRadius = currentRef.current.radius;
+
+          raindropsRef.current.forEach((drop) => {
+            // Update position
+            drop.y += drop.speed;
+            
+            // Reset if off screen
+            if (drop.y > canvas.height) {
+              drop.y = -drop.length;
+              drop.x = Math.random() * canvas.width;
+            }
+
+            // Calculate distance to spotlight
+            const dx = drop.x - spotlightX;
+            const dy = drop.y - spotlightY;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            // Illuminate drops within spotlight radius
+            let brightness = drop.opacity;
+            if (distance < spotlightRadius) {
+              const illumination = 1 - (distance / spotlightRadius);
+              brightness = drop.opacity + (illumination * 0.6);
+            }
+
+            // Draw raindrop
+            ctx.strokeStyle = `rgba(200, 220, 255, ${brightness})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(drop.x, drop.y);
+            ctx.lineTo(drop.x, drop.y + drop.length);
+            ctx.stroke();
+          });
+        }
+      }
+      
       animationFrameRef.current = requestAnimationFrame(animate);
     };
 
@@ -67,6 +207,12 @@ const Hero: React.FC = () => {
           backgroundImage: "url('assets/hero.png')",
         }}
       ></div>
+      
+      {/* Rain Canvas - in front of background, behind text */}
+      <canvas 
+        ref={canvasRef}
+        className="hero__rain"
+      />
       
       {/* Vignette and Spotlight Effects */}
       <div className="hero__vignette vignette"></div>
