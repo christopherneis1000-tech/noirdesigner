@@ -136,7 +136,7 @@ const Cases: React.FC = () => {
       role: "UI/UX, Visual Design",
       stack: "React, Firebase",
       mission: "Multiuser-Verwaltung für ein Tierheim",
-      liveLink: "https://katzenverwaltung-teresa.netlify.app/",
+      liveLink: "https://catmanager.vercel.app/",
       evidenceLink: "#"
     },
     {
