@@ -8,7 +8,7 @@ A Film Noir-inspired portfolio website showcasing UX/UI design and full-stack de
 
 This portfolio reimagines the traditional designer portfolio as a detective's case file, complete with noir aesthetics, interactive spotlight effects, and comic-book inspired UI panels. Every design decision reinforces the narrative theme while maintaining excellent UX principles.
 
-**Live Demo:** [View Portfolio](https://noirdesigner.vercel.app) *(update with your deployment URL)*
+**Live Demo:** [View Portfolio](https://noirdesigner.christopherneis1000.workers.dev/) *(update with your deployment URL)*
 
 ---
 
