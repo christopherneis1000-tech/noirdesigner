@@ -660,12 +660,12 @@ body::before {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: grayscale(100%) contrast(1.4) brightness(0.6);
+  filter: grayscale(30%) contrast(1.4) brightness(0.6);
   transition: all 0.7s;
 }
 
 .case-item__image:hover {
-  filter: grayscale(100%) contrast(1.4) brightness(0.75);
+  filter: grayscale(30%) contrast(1.4) brightness(0.75);
 }
 
 .case-item__evidence {
