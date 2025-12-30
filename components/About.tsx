@@ -14,7 +14,7 @@ const About: React.FC = () => {
         </div>
         <div className="about-portrait__image-wrapper">
             <img 
-              src="assets/about.png" 
+              src="assets/about.webp" 
               alt="The Detective at Work" 
               className="about-portrait__image"
             />

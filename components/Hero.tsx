@@ -204,7 +204,7 @@ const Hero: React.FC = () => {
       <div 
         className="hero__background"
         style={{ 
-          backgroundImage: "url('assets/hero.png')",
+          backgroundImage: "url('assets/hero.webp')",
         }}
       ></div>
       

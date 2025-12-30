@@ -8,7 +8,7 @@ const Process: React.FC = () => {
       title: "INTERROGATION",
       subtitle: "User-Research, Interviews",
       desc: "Die Stakeholder lügen immer. Ich schaue hinter die Worte, um die wahre Motivation zu finden.",
-      image: "/assets/interrogation.png",
+      image: "/assets/interrogation.webp",
       points: [
         "Stakeholder & User Interviews",
         "Pain Point Analysis",
@@ -20,7 +20,7 @@ const Process: React.FC = () => {
       title: "CRIME SCENE",
       subtitle: "Audit der aktuellen UI",
       desc: "Ich untersuche die Datenreste. Wo sind die User abgesprungen? Wo liegt die Leiche im Keller?",
-      image: "/assets/crimescene.png",
+      image: "/assets/crimescene.webp",
       points: [
         "Heuristic Evaluation",
         "User Flow Analysis",
@@ -32,7 +32,7 @@ const Process: React.FC = () => {
       title: "EVIDENCE BOARD",
       subtitle: "Wireframes, Flows",
       desc: "Ich erstelle ein Bild des Täters – äh, des Users. Was treibt ihn an? Was sind seine Ängste?",
-      image: "/assets/evidenceboard.png",
+      image: "/assets/evidenceboard.webp",
       points: [
         "Information Architecture",
         "Low-Fidelity Wireframes",
@@ -44,7 +44,7 @@ const Process: React.FC = () => {
       title: "CLEAN GETAWAY",
       subtitle: "Final Design, Handover",
       desc: "Keine Gnade für schlechte Pixel. Am Ende steht ein Design, das keine Fragen offen lässt.",
-      image: "/assets/getaway.png",
+      image: "/assets/getaway.webp",
       points: [
         "High-Fidelity UI Design",
         "Design System Documentation",
