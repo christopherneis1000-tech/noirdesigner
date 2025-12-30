@@ -74,7 +74,7 @@ const About: React.FC = () => {
                 </div>
                 <div>
                     <h4 className="about-dossier__stat-title">Focus</h4>
-                    <p className="about-dossier__stat-content">UI/UX, Visual Design, AI-Enhanced Workflows</p>
+                    <p className="about-dossier__stat-content">UI/UX, Visual Design, AI-Enhanced Workflows, Databases, Performance, SEO</p>
                 </div>
             </div>
             

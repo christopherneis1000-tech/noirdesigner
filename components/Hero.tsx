@@ -11,11 +11,23 @@ interface Raindrop {
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const targetRef = useRef({ x: 50, y: 50, radius: 256 });
-  const currentRef = useRef({ x: 50, y: 50, radius: 256 });
+  const beamRef = useRef<SVGPolygonElement>(null);
+  const targetRef = useRef({ x: 65, y: 40, radius: 256 });
+  const currentRef = useRef({ x: 65, y: 40, radius: 256 });
   const animationFrameRef = useRef<number>();
   const raindropsRef = useRef<Raindrop[]>([]);
   const mousePixelRef = useRef({ x: 0, y: 0 });
+
+  useEffect(() => {
+    // Initialize spotlight on figure's arm (mobile positioning)
+    if (heroRef.current && window.innerWidth < 1024) {
+      const rect = heroRef.current.getBoundingClientRect();
+      mousePixelRef.current = {
+        x: rect.width * 0.65,
+        y: rect.height * 0.40
+      };
+    }
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -137,6 +149,14 @@ const Hero: React.FC = () => {
       heroRef.current.style.setProperty('--spotlight-y', `${currentRef.current.y}%`);
       heroRef.current.style.setProperty('--spotlight-radius', `${currentRef.current.radius}px`);
       
+      // Update beam polygon to end at spotlight position
+      if (beamRef.current) {
+        const x = currentRef.current.x;
+        const y = currentRef.current.y;
+        const spread = 5; // Width of beam at spotlight
+        beamRef.current.setAttribute('points', `${x},0 ${x - spread},${y} ${x + spread},${y}`);
+      }
+      
       // Animate rain on canvas
       if (canvasRef.current) {
         const ctx = canvasRef.current.getContext('2d', { alpha: true });
@@ -222,13 +242,15 @@ const Hero: React.FC = () => {
       <svg className="hero__beam" viewBox="0 0 100 100" preserveAspectRatio="none">
         <defs>
           <linearGradient id="beamGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" style={{ stopColor: '#ff4d4d', stopOpacity: 0.15 }} />
+            <stop offset="0%" style={{ stopColor: '#ff4d4d', stopOpacity: 0.3 }} />
+            <stop offset="50%" style={{ stopColor: '#ff4d4d', stopOpacity: 0.15 }} />
             <stop offset="100%" style={{ stopColor: '#ff4d4d', stopOpacity: 0 }} />
           </linearGradient>
         </defs>
         <polygon 
+          ref={beamRef}
           className="hero__beam-polygon"
-          points="50,0 40,100 60,100"
+          points="65,0 60,40 70,40"
           fill="url(#beamGradient)"
         />
       </svg>

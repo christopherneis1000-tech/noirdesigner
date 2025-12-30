@@ -189,10 +189,15 @@ body::before {
   mix-blend-mode: screen;
 }
 
+/* Make beam more visible on mobile */
+@media (max-width: 1023px) {
+  .hero__beam {
+    opacity: 0.8;
+  }
+}
+
 .hero__beam-polygon {
-  transform-origin: 50% 0%;
-  will-change: transform;
-  transform: translateX(calc(var(--spotlight-x) - 50%)) translateZ(0);
+  will-change: points;
 }
 
 .hero__scanlines {
@@ -877,6 +882,12 @@ body::before {
   background-color: #0f0d0b;
   display: flex;
   flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
 }
 
 .process-step__header {
@@ -893,6 +904,25 @@ body::before {
   margin-bottom: var(--spacing-xs);
   text-transform: uppercase;
   letter-spacing: 0.15em;
+  transition: all 0.3s ease;
+}
+
+.process-step:hover .process-step__phase {
+  color: #ff4d4d;
+  font-size: 14px;
+}
+
+/* Mobile: Centered card effect */
+@media (max-width: 1023px) {
+  .process-step--centered {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+  }
+  
+  .process-step--centered .process-step__phase {
+    color: #ff4d4d;
+    font-size: 14px;
+  }
 }
 
 .process-step__title {

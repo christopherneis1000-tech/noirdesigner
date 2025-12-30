@@ -1,7 +1,42 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const Process: React.FC = () => {
+  const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Only apply on mobile/tablet
+      if (window.innerWidth >= 1024) return;
+
+      const viewportCenter = window.innerHeight / 2;
+      const tolerance = window.innerHeight * 0.1; // 10% tolerance
+
+      stepRefs.current.forEach((step) => {
+        if (!step) return;
+
+        const rect = step.getBoundingClientRect();
+        const cardCenter = rect.top + rect.height / 2;
+        const distanceFromCenter = Math.abs(cardCenter - viewportCenter);
+
+        if (distanceFromCenter <= tolerance) {
+          step.classList.add('process-step--centered');
+        } else {
+          step.classList.remove('process-step--centered');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
+
   const steps = [
     {
       number: "01",
@@ -66,7 +101,11 @@ const Process: React.FC = () => {
 
       <div className="process-grid">
         {steps.map((step, idx) => (
-          <div key={idx} className="process-step comic-panel">
+          <div 
+            key={idx} 
+            ref={(el) => (stepRefs.current[idx] = el)}
+            className="process-step comic-panel"
+          >
             {/* Header */}
             <div className="process-step__header">
               <span className="process-step__phase">Phase {step.number}</span>
