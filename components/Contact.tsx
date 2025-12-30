@@ -28,67 +28,25 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="contact-form">
-            <form onSubmit={(e) => e.preventDefault()}>
-              <div className="contact-form__fields">
-                <div className="contact-form__field">
-                  <label className="contact-form__label">Name</label>
-                  <input 
-                    type="text" 
-                    placeholder="Your Name"
-                    className="contact-form__input"
-                  />
-                </div>
-                <div className="contact-form__field">
-                  <label className="contact-form__label">Email</label>
-                  <input 
-                    type="email" 
-                    placeholder="your.email@domain.com"
-                    className="contact-form__input"
-                  />
-                </div>
-                <div className="contact-form__field">
-                  <label className="contact-form__label">Message</label>
-                  <textarea 
-                    rows={6}
-                    placeholder="Tell me about your case..."
-                    className="contact-form__textarea"
-                  ></textarea>
-                </div>
-              </div>
-              
-              <button className="contact-form__submit">
-                Submit Case
-              </button>
-            </form>
-
-            {/* Direct Links */}
-            <div className="contact-links">
-              <p className="contact-links__title">Direct Contact</p>
-              <div className="contact-links__list">
-                <a 
-                  href="mailto:your.email@domain.com" 
-                  className="contact-link"
-                >
-                  Email
-                </a>
-                <a 
-                  href="https://linkedin.com/in/yourprofile" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contact-link"
-                >
-                  LinkedIn
-                </a>
-                <a 
-                  href="https://github.com/yourprofile" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contact-link"
-                >
-                  GitHub
-                </a>
-              </div>
-            </div>
+            <iframe
+              id="JotFormIFrame-253634992986376"
+              title="Contact Form"
+              onLoad={() => window.parent.scrollTo(0,0)}
+              allowTransparency={true}
+              allow="geolocation; microphone; camera; fullscreen"
+              src="https://form.jotform.com/253634992986376"
+              frameBorder="0"
+              style={{
+                minWidth: '100%',
+                maxWidth: '100%',
+                height: '820px',
+                border: 'none'
+              }}
+              scrolling="no"
+            >
+            </iframe>
+            <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+            <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-253634992986376']", "https://form.jotform.com/")</script>
           </div>
         </div>
 
