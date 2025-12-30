@@ -279,22 +279,6 @@ const Hero: React.FC = () => {
         <p className="hero__subtitle">
           „In einer Stadt voller schlechtem Design braucht jemand ein Auge für Kontrast und Klarheit."
         </p>
-        
-        {/* Call-to-Action Buttons */}
-        <div className="hero__buttons">
-          <a 
-            href="#cases" 
-            className="hero__button-primary"
-          >
-            View the Case Files
-          </a>
-          <a 
-            href="#" 
-            className="hero__button-secondary"
-          >
-            Download Dossier (CV)
-          </a>
-        </div>
       </div>
 
       {/* BRIGHT LAYER - Top content with mask */}
@@ -314,22 +298,6 @@ const Hero: React.FC = () => {
         <p className="hero__subtitle">
           „In einer Stadt voller schlechtem Design braucht jemand ein Auge für Kontrast und Klarheit."
         </p>
-        
-        {/* Call-to-Action Buttons */}
-        <div className="hero__buttons">
-          <a 
-            href="#cases" 
-            className="hero__button-primary"
-          >
-            View the Case Files
-          </a>
-          <a 
-            href="#" 
-            className="hero__button-secondary"
-          >
-            Download Dossier (CV)
-          </a>
-        </div>
       </div>
     </section>
   );
