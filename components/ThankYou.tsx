@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { CheckCircle, Folder, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ThankYou: React.FC = () => {
   return (
@@ -46,6 +47,16 @@ const ThankYou: React.FC = () => {
             <p className="thankyou-quote-text">
               Jeder Fall erzählt eine Geschichte. Und ich höre zu, bis ich die Wahrheit kenne.
             </p>
+          </div>
+
+          {/* Back to Home Button */}
+          <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+            <Link 
+              to="/" 
+              className="thankyou-home-button"
+            >
+              Zurück zur Startseite
+            </Link>
           </div>
         </div>
 
