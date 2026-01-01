@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 import ThankYou from './components/ThankYou';
 import Evidence from './components/Evidence';
+import CatManager from './components/CatManager';
 import './styles.css';
 
 const rootElement = document.getElementById('root');
@@ -39,6 +40,14 @@ root.render(
             <div className="app__grain" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/asfalt-dark.png')" }}></div>
             <main className="app__main">
               <Evidence />
+            </main>
+          </div>
+        } />
+        <Route path="/catmanager" element={
+          <div className="app">
+            <div className="app__grain" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/asfalt-dark.png')" }}></div>
+            <main className="app__main">
+              <CatManager />
             </main>
           </div>
         } />

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import AIButton from './AIButton';
 import { Search } from 'lucide-react';
 
@@ -107,15 +108,25 @@ const CaseItem: React.FC<CaseItemProps> = ({
               </AIButton>
             )}
             {evidenceLink && (
-              <a 
-                href={evidenceLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="case-item__secondary-button"
-              >
-                <Search size={14} />
-                More Evidence
-              </a>
+              evidenceLink.startsWith('/') ? (
+                <Link 
+                  to={evidenceLink}
+                  className="case-item__secondary-button"
+                >
+                  <Search size={14} />
+                  More Evidence
+                </Link>
+              ) : (
+                <a 
+                  href={evidenceLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="case-item__secondary-button"
+                >
+                  <Search size={14} />
+                  More Evidence
+                </a>
+              )
             )}
           </div>
         </div>
@@ -137,7 +148,7 @@ const Cases: React.FC = () => {
       stack: "React, Firebase",
       mission: "Multiuser-Verwaltung für ein Tierheim",
       liveLink: "https://catmanager.vercel.app/",
-      evidenceLink: "#"
+      evidenceLink: "/catmanager"
     },
     {
       caseNumber: "02",
