@@ -54,7 +54,7 @@ const CaseItem: React.FC<CaseItemProps> = ({
           />
           {/* Evidence Stamp */}
           <div className="case-item__evidence">
-            Evidence A
+            Case Closed
           </div>
           
           {/* Yellow box for case 03 */}
