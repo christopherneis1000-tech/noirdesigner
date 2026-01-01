@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Palette, Code2, Zap, Target, Wrench, Award } from 'lucide-react';
+import { ArrowLeft, Palette, Code2, Zap, Wrench, Award } from 'lucide-react';
 
 const Evidence: React.FC = () => {
   const designPhilosophy = {
@@ -47,34 +47,6 @@ const Evidence: React.FC = () => {
       title: "Responsive Design",
       details: "Mobile-first approach, breakpoints: 480px, 640px, 768px, 1024px, dynamic font sizing with rem units, touch-optimized interactions"
     }
-  ];
-
-  const challenges = [
-    {
-      problem: 'Form Integration: JotForm\'s default styling clashed with noir theme',
-      solution: 'URL parameter injection + custom CSS targeting iframe, maintaining brand consistency across embedded content',
-      impact: 'Seamless integration that appears native to the design system'
-    },
-    {
-      problem: 'Button Visual Impact: CTA button not prominent enough',
-      solution: 'Layered animation system (rotating gradient + pulsing glow + hover states) while controlling overflow to prevent layout shifts',
-      impact: 'Eye-catching focal point that drives user action without jarring the experience'
-    },
-    {
-      problem: 'Mobile Layout Density: Comic panel shadows and padding consumed too much mobile space',
-      solution: 'Progressive reduction system - 12px→6px→4px shadows, 3rem→1rem→0.75rem padding across breakpoints',
-      impact: 'More content visible on small screens while maintaining visual identity'
-    },
-    {
-      problem: 'Text Readability: Low contrast gray text (#475569) on dark backgrounds',
-      solution: 'Comprehensive color audit, upgrading to #a1afc1 and #cbd5e1, plus font size increases (10px→11px, 0.75rem→0.875rem)',
-      impact: 'WCAG AA compliant readability without sacrificing aesthetic'
-    },
-    {
-      problem: 'SPA Routing on Cloudflare: Direct URL access to /thankyou returned 404',
-      solution: 'Configured not_found_handling: "single-page-application" in wrangler.jsonc for proper SPA fallback behavior',
-      impact: 'Users can share and bookmark any route in the application'
-    },
   ];
 
   const cssArchitecture = [
@@ -207,38 +179,6 @@ const Evidence: React.FC = () => {
         </section>
 
         {/* Challenges Section */}
-        <section className="evidence-section">
-          <div className="evidence-section-header">
-            <h2 className="evidence-section-title">
-              <Target size={24} />
-              Design Challenges Solved
-            </h2>
-            <p className="evidence-section-subtitle">Real problems with documented solutions</p>
-          </div>
-          
-          <div className="evidence-challenges">
-            {challenges.map((challenge, idx) => (
-              <div key={idx} className="evidence-challenge comic-panel">
-                <div className="evidence-challenge-number">#{idx + 1}</div>
-                <div className="evidence-challenge-content">
-                  <div className="evidence-challenge-row">
-                    <span className="evidence-challenge-label">Problem:</span>
-                    <span className="evidence-challenge-value">{challenge.problem}</span>
-                  </div>
-                  <div className="evidence-challenge-row">
-                    <span className="evidence-challenge-label">Solution:</span>
-                    <span className="evidence-challenge-value">{challenge.solution}</span>
-                  </div>
-                  <div className="evidence-challenge-row">
-                    <span className="evidence-challenge-label">Impact:</span>
-                    <span className="evidence-challenge-value evidence-challenge-impact">{challenge.impact}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* CSS Architecture Section */}
         <section className="evidence-section">
           <div className="evidence-section-header">

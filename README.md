@@ -82,28 +82,6 @@ The entire website is crafted around a **film noir detective theme**, transformi
 - Dynamic font sizing with rem units
 - Touch-optimized interactions
 
-## 🎯 Design Challenges Solved
-
-### Challenge 1: Form Integration
-**Problem**: JotForm's default styling clashed with noir theme  
-**Solution**: URL parameter injection + custom CSS targeting iframe, maintaining brand consistency across embedded content
-
-### Challenge 2: Button Visual Impact
-**Problem**: CTA button not prominent enough  
-**Solution**: Layered animation system (rotating gradient + pulsing glow + hover states) while controlling overflow to prevent layout shifts
-
-### Challenge 3: Mobile Layout Density
-**Problem**: Comic panel shadows and padding consumed too much mobile space  
-**Solution**: Progressive reduction system - 12px→6px→4px shadows, 3rem→1rem→0.75rem padding across breakpoints
-
-### Challenge 4: Text Readability
-**Problem**: Low contrast gray text (#475569) on dark backgrounds  
-**Solution**: Comprehensive color audit, upgrading to #a1afc1 and #cbd5e1, plus font size increases (10px→11px, 0.75rem→0.875rem)
-
-### Challenge 5: SPA Routing on Cloudflare
-**Problem**: Direct URL access to /thankyou returned 404  
-**Solution**: Configured `not_found_handling: "single-page-application"` in wrangler.jsonc for proper SPA fallback behavior
-
 ## 📁 Project Structure
 
 ```
