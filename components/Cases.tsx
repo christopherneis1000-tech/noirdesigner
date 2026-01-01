@@ -161,7 +161,7 @@ const Cases: React.FC = () => {
       stack: "Next.js, Supabase",
       mission: "Showcase der Bilder einer Malerin mit Backend zur Selbstverwaltung",
       liveLink: "https://painter-bice.vercel.app/",
-      evidenceLink: "#"
+      evidenceLink: "/crazypainter"
     },
     {
       caseNumber: "03",
