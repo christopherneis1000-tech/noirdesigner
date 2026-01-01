@@ -1257,6 +1257,243 @@ body::before {
   font-style: italic;
 }
 
+/* Thank You Component */
+.thankyou-container {
+  width: 100%;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.thankyou-panel {
+  background-color: #1a1614;
+  box-shadow: 12px 12px 0px 0px rgba(0,0,0,1);
+  overflow: hidden;
+}
+
+.thankyou-header {
+  background: linear-gradient(180deg, #0f0d0b 0%, #1a1614 100%);
+  padding: var(--spacing-3xl) var(--spacing-xl);
+  border-bottom: 4px solid black;
+  text-align: center;
+  position: relative;
+}
+
+.thankyou-icon-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: var(--spacing-xl);
+}
+
+.thankyou-icon {
+  color: #ff4d4d;
+  position: relative;
+  z-index: 2;
+  animation: checkPulse 2s ease-in-out infinite;
+}
+
+@keyframes checkPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.thankyou-icon-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(255, 77, 77, 0.3) 0%, transparent 70%);
+  animation: glowPulse 2s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.thankyou-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.5rem;
+  color: white;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  margin: 0;
+}
+
+.thankyou-title-accent {
+  color: #ff4d4d;
+}
+
+.thankyou-content {
+  padding: var(--spacing-3xl) var(--spacing-2xl);
+}
+
+.thankyou-message {
+  font-family: 'Special Elite', monospace;
+  font-size: 1.125rem;
+  color: #cbd5e1;
+  line-height: 1.8;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.thankyou-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-3xl);
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.thankyou-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background-color: black;
+  border: 2px solid #1e293b;
+  transition: border-color 0.3s ease;
+}
+
+.thankyou-detail:hover {
+  border-color: #334155;
+}
+
+.thankyou-detail-icon {
+  color: #ff4d4d;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.thankyou-detail-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.thankyou-detail-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 10px;
+  color: #a1afc1;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.thankyou-detail-value {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.875rem;
+  color: #e5e7eb;
+  font-weight: 500;
+}
+
+.thankyou-quote {
+  position: relative;
+  padding: var(--spacing-xl);
+  background: linear-gradient(135deg, rgba(255, 77, 77, 0.03) 0%, transparent 100%);
+  border-left: 3px solid #ff4d4d;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.thankyou-quote-mark {
+  position: absolute;
+  top: -10px;
+  left: var(--spacing-md);
+  font-family: 'Oswald', sans-serif;
+  font-size: 4rem;
+  color: #ff4d4d;
+  opacity: 0.2;
+  line-height: 1;
+}
+
+.thankyou-quote-text {
+  font-family: 'Special Elite', monospace;
+  font-size: 0.875rem;
+  color: #cbd5e1;
+  font-style: italic;
+  line-height: 1.8;
+  margin: 0;
+  position: relative;
+}
+
+.thankyou-footer {
+  background-color: black;
+  padding: var(--spacing-xl);
+  border-top: 4px solid #1e293b;
+  display: flex;
+  justify-content: center;
+}
+
+.thankyou-stamp {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-xl);
+  border: 3px solid #ff4d4d;
+  transform: rotate(-2deg);
+  background-color: rgba(255, 77, 77, 0.05);
+}
+
+.thankyou-stamp-text {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.125rem;
+  color: #ff4d4d;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+}
+
+.thankyou-stamp-date {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  color: #ff4d4d;
+  margin-top: var(--spacing-xs);
+}
+
+/* Thank You Mobile Styles */
+@media (max-width: 768px) {
+  .thankyou-title {
+    font-size: 2rem;
+  }
+
+  .thankyou-content {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+  }
+
+  .thankyou-message {
+    font-size: 1rem;
+  }
+
+  .thankyou-details {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+}
+
 /* Footer Component */
 .footer {
   width: 100%;
