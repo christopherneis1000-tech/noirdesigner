@@ -48,7 +48,7 @@ const CaseItem: React.FC<CaseItemProps> = ({
         <div className="case-item__image-wrapper">
           <img 
             src={image} 
-            alt={title} 
+            alt={`${title} - ${category} project showcasing ${role}`}
             className="case-item__image"
           />
           {/* Evidence Stamp */}

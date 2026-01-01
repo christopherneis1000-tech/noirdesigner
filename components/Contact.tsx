@@ -34,13 +34,14 @@ const Contact: React.FC = () => {
               onLoad={() => window.parent.scrollTo(0,0)}
               allowTransparency={true}
               allow="geolocation; microphone; camera; fullscreen"
-              src="https://form.jotform.com/253634992986376"
+              src="https://form.jotform.com/253634992986376?isIframeEmbed=1&backgroundColor=000000&textColor=e5e7eb&fontFamily=Special%20Elite&primaryColor=ffffff&secondaryColor=1e293b"
               frameBorder="0"
               style={{
                 minWidth: '100%',
                 maxWidth: '100%',
                 height: '820px',
-                border: 'none'
+                border: 'none',
+                backgroundColor: 'black'
               }}
               scrolling="no"
             >

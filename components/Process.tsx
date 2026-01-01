@@ -115,7 +115,7 @@ const Process: React.FC = () => {
 
             {/* Image */}
             <div className="process-step__image">
-              <img src={step.image} alt={step.title} className="process-step__img" />
+              <img src={step.image} alt={`${step.title} - Phase ${step.number}: ${step.subtitle}`} className="process-step__img" />
               <div className="process-step__image-shadow"></div>
             </div>
 

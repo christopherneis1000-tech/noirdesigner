@@ -15,7 +15,7 @@ const About: React.FC = () => {
         <div className="about-portrait__image-wrapper">
             <img 
               src="assets/about.webp" 
-              alt="The Detective at Work" 
+              alt="Christopher Neis - UI/UX Designer and Full-Stack Developer working at desk" 
               className="about-portrait__image"
             />
             {/* Soft shadow to blend image into the frame */}
