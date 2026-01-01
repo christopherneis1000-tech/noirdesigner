@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 import ThankYou from './components/ThankYou';
+import Evidence from './components/Evidence';
 import './styles.css';
 
 const rootElement = document.getElementById('root');
@@ -30,6 +31,14 @@ root.render(
                   <ThankYou />
                 </div>
               </section>
+            </main>
+          </div>
+        } />
+        <Route path="/evidence" element={
+          <div className="app">
+            <div className="app__grain" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/asfalt-dark.png')" }}></div>
+            <main className="app__main">
+              <Evidence />
             </main>
           </div>
         } />
