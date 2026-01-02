@@ -194,7 +194,7 @@ const Cases: React.FC = () => {
       stack: "React, FireBase, Scroll Animation",
       mission: "Proof of concept OnScroll Parallax Animation",
       liveLink: "https://cnpersonal.christopherneis1000.workers.dev/",
-      evidenceLink: "#"
+      evidenceLink: "/toothfairy"
     }
   ];
 

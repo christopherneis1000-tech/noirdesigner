@@ -7,6 +7,7 @@ import ThankYou from './components/ThankYou';
 import Evidence from './components/Evidence';
 import CatManager from './components/CatManager';
 import CrazyPainter from './components/CrazyPainter';
+import ToothFairy from './components/ToothFairy';
 import ScrollToTop from './components/ScrollToTop';
 import './styles.css';
 
@@ -59,6 +60,14 @@ root.render(
             <div className="app__grain" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/asfalt-dark.png')" }}></div>
             <main className="app__main">
               <CrazyPainter />
+            </main>
+          </div>
+        } />
+        <Route path="/toothfairy" element={
+          <div className="app">
+            <div className="app__grain" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/asfalt-dark.png')" }}></div>
+            <main className="app__main">
+              <ToothFairy />
             </main>
           </div>
         } />
