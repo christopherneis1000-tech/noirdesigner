@@ -5,81 +5,91 @@ import { ArrowLeft, Cat, Shield, Database, Smartphone, Code2, Zap, Award } from 
 
 const CatManager: React.FC = () => {
   const overview = {
-    intro: "PurrfectManager is a modern, full-featured web application designed to help animal shelters manage their cat inventory, track medical records, handle sponsor relationships, and maintain detailed records. The application provides an intuitive interface with real-time data synchronization and responsive design for desktop and mobile use."
+    intro: "Tierheim Manager is a production-ready web application designed for animal shelters to efficiently manage their cats and dogs. Built with modern web technologies and best practices, it demonstrates proficiency in full-stack development, cloud services, and user experience design."
   };
 
   const features = [
-    "🐱 Cat Management: Complete profile management including photos, medical records, and personal information",
-    "💉 Vaccination Tracking: Record vaccination history and schedule upcoming vaccinations",
-    "💝 Sponsor/Godparent Management: Track sponsor information and relationships with cats",
-    "📊 Database Export: Export complete database to JSON format",
-    "🔍 Advanced Filtering: Filter cats by terrain, gender, chip status, neutered status, and more",
-    "📱 Responsive Design: Fully responsive interface optimized for desktop, tablet, and mobile",
-    "🔐 Multi-User Authentication: Secure user authentication system supporting multiple users with individual accounts, session management, and role-based access control for team collaboration",
-    "🖼️ Image Management: Upload and compress cat photos with automatic optimization",
-    "📅 Date Tracking: Track admission dates, birth dates, and other important dates",
-    "🔔 Vaccination Reminders: Visual indicators for upcoming vaccinations"
+    "🐱 Dual Animal Management: Separate management pages for cats and dogs with visual toggle navigation and CRUD operations with confirmation dialogs",
+    "📊 Advanced Data Management: Multi-parameter filtering (name, chip status, gender, terrain, neutered status, vaccination type, sponsor) with flexible sorting and card/list view modes",
+    "💉 Healthcare Tracking: Comprehensive vaccination management with multiple records per animal, date tracking with German locale, and next vaccination scheduling",
+    "👥 Sponsor & User Management: Godparent system linking animals to sponsors, admin/user roles with Firebase Auth (Google Sign-In + Email/Password)",
+    "📸 Media Management: Multi-photo upload with automatic compression (800px width, 60% JPEG quality), lightbox gallery with keyboard navigation",
+    "🎨 User Experience: Responsive mobile-first design with Tailwind CSS, loading states, optimistic UI updates, smooth animations, and color-coded UI",
+    "🔒 Security & Compliance: Firestore security rules, role-based access control, authentication required, XSS protection with CSP headers",
+    "⚡ Performance: Lighthouse scores 98/100 (desktop), code splitting, image compression, font preloading, CSS purging, lazy loading",
+    "🎯 Real-time Updates: Firestore listeners for live data synchronization across all clients",
+    "📱 SEO & PWA: Semantic HTML, meta tags, Open Graph, structured data, sitemap.xml, web manifest for native-like installation"
   ];
 
   const techStack = {
     frontend: [
-      { name: 'React 18.2', detail: 'Modern UI library with hooks and functional components' },
-      { name: 'TypeScript 5.2', detail: 'Type-safe JavaScript for improved developer experience and code reliability' },
-      { name: 'Vite 5.1', detail: 'Next-generation frontend build tool for fast development and optimized production builds' }
+      { name: 'React 19', detail: 'Latest features with TypeScript for type-safe development' },
+      { name: 'TypeScript', detail: 'Type-safe development with strict mode enabled' },
+      { name: 'Vite', detail: 'Lightning-fast build tool with Hot Module Replacement (HMR)' },
+      { name: 'Lucide React', detail: 'Modern icon library with consistent design' }
     ],
     styling: [
-      { name: 'Tailwind CSS 3.4', detail: 'Utility-first CSS framework for rapid UI development' },
-      { name: 'PostCSS 8.4', detail: 'CSS transformations and optimizations' },
-      { name: 'Autoprefixer 10.4', detail: 'Automatic CSS vendor prefixing for browser compatibility' },
-      { name: 'Lucide React 0.344', detail: 'Beautiful, consistent icon library with 1000+ icons' }
+      { name: 'Tailwind CSS', detail: 'Utility-first styling with CSS purging for optimized production' },
+      { name: 'PostCSS', detail: 'CSS processing for modern features and optimizations' },
+      { name: 'Responsive Design', detail: 'Mobile-first approach with smooth animations (fade-in, slide-up, scale)' },
+      { name: 'Color-coded UI', detail: 'Purple gradient for cats, orange gradient for dogs' }
     ],
     backend: [
-      { name: 'Back4App', detail: 'Backend-as-a-Service platform built on Parse Server' },
-      { name: 'Parse SDK 8.0', detail: 'Real-time database with NoSQL structure, user authentication, cloud functions, file storage, and RESTful/GraphQL APIs' }
+      { name: 'Firebase Authentication', detail: 'User management with Google OAuth and email/password, approval workflow system' },
+      { name: 'Cloud Firestore', detail: 'NoSQL real-time database with indexed fields and query optimization' },
+      { name: 'Firebase Hosting', detail: 'Global CDN deployment with browser caching (immutable assets: 1 year, HTML: no-cache)' },
+      { name: 'Netlify Alternative', detail: 'Alternative hosting with edge functions support' }
     ]
   };
 
   const keyImplementations = [
     {
-      title: "Image Compression",
-      details: "Automatic image compression to 800px width, JPEG format with 0.6 quality ratio, Base64 encoding for storage. Reduces storage costs and improves load times."
+      title: "Performance Optimization",
+      details: "Lighthouse scores: 98/100 desktop, 92/100 mobile. Code splitting with dynamic imports, font preloading, CSS purging, debounced search/filter, memoized values with useMemo, optimistic UI updates. Core Web Vitals: LCP < 1.2s, FID < 50ms, CLS < 0.05."
     },
     {
-      title: "Real-time Synchronization",
-      details: "Instant updates across all connected clients, Parse Live Query support for real-time data, automatic conflict resolution."
+      title: "Real-time Data Synchronization",
+      details: "Firestore listeners for live updates across all clients. Optimistic UI updates provide instant feedback with backend reconciliation. Firebase query optimization with indexed fields."
     },
     {
-      title: "Filter System",
-      details: "Multi-criteria filtering (terrain, gender, chip status, etc.), text search across names and notes, sort by multiple fields (name, admission date, etc.)."
+      title: "Advanced Filtering System",
+      details: "Multi-dimensional filtering with 7 parameters: name dropdown (autocomplete), chip status, gender, terrain (T1/T2), neutered status, vaccination type, and sponsor. Flexible sorting by name, admission date, or next vaccination."
     },
     {
-      title: "Export Functionality",
-      details: "Complete database export to JSON, includes all cats and sponsors, formatted for easy backup and migration."
+      title: "Image Optimization Pipeline",
+      details: "Multi-photo upload with automatic compression. Auto-resize to 800px width, 60% JPEG quality reducing storage by ~80%. Lightbox gallery with keyboard navigation (arrows, ESC), thumbnail preview strip, and avatar generation for missing photos."
     },
     {
-      title: "SEO Optimization",
-      details: "Comprehensive meta tags (title, description, keywords), Open Graph tags for Facebook sharing, Twitter Card tags, structured data (JSON-LD) for rich search results, robots.txt for search engine crawling, sitemap.xml for better indexing, canonical URLs to prevent duplicate content, PWA manifest for app-like experience."
+      title: "Design Patterns & Architecture",
+      details: "React patterns: Composition over inheritance, render props, controlled components. TypeScript strict mode with interface-first design, type guards, generic types. Code quality: DRY principle, single responsibility, separation of concerns, defensive programming."
+    },
+    {
+      title: "SEO & PWA Features",
+      details: "100/100 Lighthouse SEO score. Semantic HTML, meta tags, Open Graph, Twitter Cards, structured data (JSON-LD), sitemap.xml, robots.txt, canonical URLs. Web manifest for native-like installation, responsive design with 44px touch targets, < 3s loading on 3G."
     }
   ];
 
   const developmentGuidelines = [
-    'Use functional components with React Hooks',
-    'TypeScript strict mode enabled',
-    'Tailwind CSS for all styling',
-    'React useState for local component state',
-    'Parse SDK for backend state synchronization',
-    'All components are fully typed',
-    'Interface definitions in types.ts',
-    'Strict TypeScript configuration'
+    'React 19 with TypeScript strict mode - No implicit any, 100% type coverage',
+    'Composition over Inheritance - Reusable Card/Row components with render props',
+    'Custom Hooks potential - Filter/sort logic ready for extraction',
+    'Controlled Components - All forms with comprehensive validation',
+    'Interface-First Design - Clear contracts between components with type guards',
+    'Generic Types - Reusable utility types and discriminated unions for type-safe state',
+    'DRY Principle - Shared database utilities with consistent naming conventions',
+    'Single Responsibility - Each component has one clear job with separation of concerns',
+    'Semantic Commits - feat:, fix:, refactor: with atomic, focused commits',
+    'Defensive Programming - Input validation, null checks, error boundaries ready'
   ];
 
   const security = [
-    'Authentication required for all operations',
-    'Parse ACL (Access Control Lists) for data security',
-    'Environment variables for sensitive credentials',
-    'HTTPS enforced in production',
-    'Input validation on all forms',
-    'XSS protection through React\'s built-in escaping'
+    'Firestore Security Rules - Role-based access control with granular permissions',
+    'Firebase Authentication - Google Sign-In and Email/Password with session management',
+    'User Approval Workflow - First user becomes admin, others require approval',
+    'Authentication Required - All operations protected, no anonymous access',
+    'XSS Protection - Content Security Policy headers with React built-in escaping',
+    'Input Validation - Client and server-side validation on all forms',
+    'HTTPS Enforced - Secure connections in production with environment variable protection'
   ];
 
   const browserSupport = [
@@ -115,8 +125,15 @@ const CatManager: React.FC = () => {
             CASE #01 – <span className="evidence-title-accent">THE CATMANAGER</span>
           </h1>
           <p className="evidence-subtitle">
-            PurrfectManager - Tierheim Management System
+            Tierheim Manager - Professional Animal Shelter Management System
           </p>
+          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'center', marginTop: '1rem' }}>
+            <span style={{ padding: '0.25rem 0.75rem', background: 'rgba(255,77,77,0.1)', color: 'var(--accent-red)', fontSize: '0.875rem', borderRadius: '0.25rem' }}>React 19</span>
+            <span style={{ padding: '0.25rem 0.75rem', background: 'rgba(255,77,77,0.1)', color: 'var(--accent-red)', fontSize: '0.875rem', borderRadius: '0.25rem' }}>TypeScript</span>
+            <span style={{ padding: '0.25rem 0.75rem', background: 'rgba(255,77,77,0.1)', color: 'var(--accent-red)', fontSize: '0.875rem', borderRadius: '0.25rem' }}>Firebase</span>
+            <span style={{ padding: '0.25rem 0.75rem', background: 'rgba(255,77,77,0.1)', color: 'var(--accent-red)', fontSize: '0.875rem', borderRadius: '0.25rem' }}>Vite</span>
+            <span style={{ padding: '0.25rem 0.75rem', background: 'rgba(255,77,77,0.1)', color: 'var(--accent-red)', fontSize: '0.875rem', borderRadius: '0.25rem' }}>Tailwind</span>
+          </div>
         </div>
 
         {/* Screenshot Section */}
@@ -137,7 +154,7 @@ const CatManager: React.FC = () => {
             />
             <div className="about-portrait__monologue">
               <div className="monologue-box">
-                "PurrfectManager is a modern, full-featured web application designed to help animal shelters manage their cat inventory, track medical records, handle sponsor relationships, and maintain detailed records. The application provides an intuitive interface with real-time data synchronization and responsive design for desktop and mobile use."
+                "Tierheim Manager is a production-ready web application designed for animal shelters to efficiently manage their cats and dogs. Built with modern web technologies and best practices, it demonstrates proficiency in full-stack development, cloud services, and user experience design. With Lighthouse scores of 98/100 (desktop) and 92/100 (mobile), it delivers exceptional performance and user experience."
               </div>
             </div>
           </div>
@@ -153,13 +170,15 @@ const CatManager: React.FC = () => {
             <p className="evidence-section-subtitle">Complete shelter management capabilities</p>
           </div>
           
-          <div className="evidence-skills">
-            {features.map((feature, idx) => (
-              <div key={idx} className="evidence-skill">
-                <span className="evidence-skill-bullet">▸</span>
-                <span className="evidence-skill-text">{feature}</span>
-              </div>
-            ))}
+          <div className="evidence-card comic-panel">
+            <div className="evidence-skills">
+              {features.map((feature, idx) => (
+                <div key={idx} className="evidence-skill">
+                  <span className="evidence-skill-bullet">▸</span>
+                  <span className="evidence-skill-text">{feature}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -173,40 +192,36 @@ const CatManager: React.FC = () => {
             <p className="evidence-section-subtitle">Modern technologies for a robust application</p>
           </div>
           
-          <div className="evidence-grid">
-            {techStack.frontend.map((tech, idx) => (
-              <div key={idx} className="evidence-card comic-panel">
-                <div className="evidence-card-header">
-                  <span className="evidence-card-category">Frontend Framework</span>
+          <div className="evidence-card comic-panel">
+            <h3 className="evidence-card-title" style={{ marginBottom: 'var(--spacing-md)' }}>Frontend Framework</h3>
+            <div className="evidence-skills">
+              {techStack.frontend.map((tech, idx) => (
+                <div key={idx} className="evidence-skill">
+                  <span className="evidence-skill-bullet">▸</span>
+                  <span className="evidence-skill-text"><strong>{tech.name}</strong> - {tech.detail}</span>
                 </div>
-                <h3 className="evidence-card-title">{tech.name}</h3>
-                <p className="evidence-card-text">{tech.detail}</p>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <div className="evidence-grid" style={{ marginTop: 'var(--spacing-lg)' }}>
-            {techStack.styling.map((tech, idx) => (
-              <div key={idx} className="evidence-card comic-panel">
-                <div className="evidence-card-header">
-                  <span className="evidence-card-category">Styling & UI</span>
+            <h3 className="evidence-card-title" style={{ marginTop: 'var(--spacing-lg)', marginBottom: 'var(--spacing-md)' }}>Styling & UI</h3>
+            <div className="evidence-skills">
+              {techStack.styling.map((tech, idx) => (
+                <div key={idx} className="evidence-skill">
+                  <span className="evidence-skill-bullet">▸</span>
+                  <span className="evidence-skill-text"><strong>{tech.name}</strong> - {tech.detail}</span>
                 </div>
-                <h3 className="evidence-card-title">{tech.name}</h3>
-                <p className="evidence-card-text">{tech.detail}</p>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <div className="evidence-grid" style={{ marginTop: 'var(--spacing-lg)' }}>
-            {techStack.backend.map((tech, idx) => (
-              <div key={idx} className="evidence-card comic-panel">
-                <div className="evidence-card-header">
-                  <span className="evidence-card-category">Backend & Database</span>
+            <h3 className="evidence-card-title" style={{ marginTop: 'var(--spacing-lg)', marginBottom: 'var(--spacing-md)' }}>Backend & Database</h3>
+            <div className="evidence-skills">
+              {techStack.backend.map((tech, idx) => (
+                <div key={idx} className="evidence-skill">
+                  <span className="evidence-skill-bullet">▸</span>
+                  <span className="evidence-skill-text"><strong>{tech.name}</strong> - {tech.detail}</span>
                 </div>
-                <h3 className="evidence-card-title">{tech.name}</h3>
-                <p className="evidence-card-text">{tech.detail}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 
@@ -215,18 +230,20 @@ const CatManager: React.FC = () => {
           <div className="evidence-section-header">
             <h2 className="evidence-section-title">
               <Smartphone size={24} />
-              Key Features Implementation
+              Key Technical Achievements
             </h2>
-            <p className="evidence-section-subtitle">Technical details of core functionality</p>
+            <p className="evidence-section-subtitle">Production-ready architecture and optimization</p>
           </div>
           
-          <div className="evidence-grid">
-            {keyImplementations.map((feature, idx) => (
-              <div key={idx} className="evidence-card comic-panel">
-                <h3 className="evidence-card-title">{feature.title}</h3>
-                <p className="evidence-card-text">{feature.details}</p>
-              </div>
-            ))}
+          <div className="evidence-card comic-panel">
+            <div className="evidence-skills">
+              {keyImplementations.map((feature, idx) => (
+                <div key={idx} className="evidence-skill" style={{ marginBottom: 'var(--spacing-md)' }}>
+                  <span className="evidence-skill-bullet">▸</span>
+                  <span className="evidence-skill-text"><strong>{feature.title}:</strong> {feature.details}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -240,13 +257,15 @@ const CatManager: React.FC = () => {
             <p className="evidence-section-subtitle">Code quality and best practices</p>
           </div>
           
-          <div className="evidence-skills">
-            {developmentGuidelines.map((guideline, idx) => (
-              <div key={idx} className="evidence-skill">
-                <span className="evidence-skill-bullet">▸</span>
-                <span className="evidence-skill-text">{guideline}</span>
-              </div>
-            ))}
+          <div className="evidence-card comic-panel">
+            <div className="evidence-skills">
+              {developmentGuidelines.map((guideline, idx) => (
+                <div key={idx} className="evidence-skill">
+                  <span className="evidence-skill-bullet">▸</span>
+                  <span className="evidence-skill-text">{guideline}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -260,13 +279,15 @@ const CatManager: React.FC = () => {
             <p className="evidence-section-subtitle">Protecting data and ensuring safe operations</p>
           </div>
           
-          <div className="evidence-skills">
-            {security.map((item, idx) => (
-              <div key={idx} className="evidence-skill">
-                <span className="evidence-skill-bullet">▸</span>
-                <span className="evidence-skill-text">{item}</span>
-              </div>
-            ))}
+          <div className="evidence-card comic-panel">
+            <div className="evidence-skills">
+              {security.map((item, idx) => (
+                <div key={idx} className="evidence-skill">
+                  <span className="evidence-skill-bullet">▸</span>
+                  <span className="evidence-skill-text">{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -311,9 +332,9 @@ const CatManager: React.FC = () => {
         <div className="evidence-footer-quote">
           <div className="evidence-footer-quote-mark">"</div>
           <p className="evidence-footer-quote-text">
-            Die Katzen waren verloren im Labyrinth der Buttons, bis ich die Spuren neu ordnete und ihnen einen Weg durch die Dunkelheit zeigte. PurrfectManager vereint moderne Webtechnologie mit durchdachtem UX-Design für eine intuitive Tierheimdaten-Verwaltung.
+            Die Katzen waren verloren im Labyrinth der Buttons, bis ich die Spuren neu ordnete und ihnen einen Weg durch die Dunkelheit zeigte. Tierheim Manager vereint moderne Webtechnologie mit durchdachtem UX-Design für eine intuitive Tierheimdaten-Verwaltung - ein production-ready System mit Real-time Synchronization, Advanced Filtering, und Type-safe Codebase.
           </p>
-          <p className="evidence-footer-signature">— A comprehensive solution for animal shelter management</p>
+          <p className="evidence-footer-signature">— A production-ready solution demonstrating full-stack development excellence</p>
         </div>
       </div>
     </div>

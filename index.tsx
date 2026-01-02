@@ -7,6 +7,7 @@ import ThankYou from './components/ThankYou';
 import Evidence from './components/Evidence';
 import CatManager from './components/CatManager';
 import CrazyPainter from './components/CrazyPainter';
+import ScrollToTop from './components/ScrollToTop';
 import './styles.css';
 
 const rootElement = document.getElementById('root');
@@ -18,6 +19,7 @@ const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/thankyou" element={

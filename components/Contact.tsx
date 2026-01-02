@@ -31,7 +31,6 @@ const Contact: React.FC = () => {
             <iframe
               id="JotFormIFrame-253634992986376"
               title="Contact Form"
-              onLoad={() => window.parent.scrollTo(0,0)}
               allowTransparency={true}
               allow="geolocation; microphone; camera; fullscreen"
               src="https://form.jotform.com/253634992986376?isIframeEmbed=1&backgroundColor=000000&textColor=e5e7eb&fontFamily=Special%20Elite&primaryColor=ffffff&secondaryColor=1e293b"
