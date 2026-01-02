@@ -512,7 +512,10 @@ const CrazyPainter: React.FC = () => {
         <div className="evidence-footer-quote">
           <div className="evidence-footer-quote-mark">"</div>
           <p className="evidence-footer-quote-text">
-            Ein kreativer Auftritt ist wie ein Name. Wenn er nichts bedeutet, bist du so gut wie tot. Ich gab dieser Marke eine Show, die man nicht vergisst. This portfolio demonstrates comprehensive full-stack capabilities, from performance optimization to brand strategy, creating a premium digital experience that elevates the artist's work.
+            Ein kreativer Auftritt ist wie ein Name. Wenn er nichts bedeutet, bist du so gut wie tot. Ich gab dieser Marke eine Show, die man nicht vergisst.
+          </p>
+          <p className="evidence-footer-quote-text" style={{ marginTop: 'var(--spacing-md)' }}>
+            This portfolio demonstrates comprehensive full-stack capabilities, from performance optimization to brand strategy, creating a premium digital experience that elevates the artist's work.
           </p>
           <p className="evidence-footer-signature">— Where art meets technology in perfect harmony</p>
         </div>
