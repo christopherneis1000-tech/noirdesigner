@@ -57,11 +57,29 @@ const CaseItem: React.FC<CaseItemProps> = ({
             Case Closed
           </div>
           
+          {/* Yellow box for case 01 */}
+          {caseNumber === "01" && (
+            <div className="about-portrait__monologue">
+              <div className="monologue-box">
+                "{voiceover}"
+              </div>
+            </div>
+          )}
+          
+          {/* Yellow box for case 02 */}
+          {caseNumber === "02" && (
+            <div className="about-portrait__monologue">
+              <div className="monologue-box">
+                "{voiceover}"
+              </div>
+            </div>
+          )}
+          
           {/* Yellow box for case 03 */}
           {caseNumber === "03" && (
             <div className="about-portrait__monologue">
               <div className="monologue-box">
-                "Wieviele Zähne hast du, Batman?"
+                "{voiceover}"
               </div>
             </div>
           )}
@@ -72,12 +90,14 @@ const CaseItem: React.FC<CaseItemProps> = ({
         {/* Right: Case Details */}
         <div className="case-item__details">
           <div>
-            {/* Voiceover */}
-            <div className="case-item__voiceover">
-              <p className="case-item__voiceover-text">
-                "{voiceover}"
-              </p>
-            </div>
+            {/* Voiceover - hidden for cases 01, 02, and 03 */}
+            {caseNumber !== "01" && caseNumber !== "02" && caseNumber !== "03" && (
+              <div className="case-item__voiceover">
+                <p className="case-item__voiceover-text">
+                  "{voiceover}"
+                </p>
+              </div>
+            )}
             
             {/* Details List */}
             <div className="case-item__info">

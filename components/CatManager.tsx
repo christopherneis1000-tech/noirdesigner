@@ -129,29 +129,17 @@ const CatManager: React.FC = () => {
             <p className="evidence-section-subtitle">The interface in action</p>
           </div>
           
-          <div className="evidence-card comic-panel" style={{ padding: 0, overflow: 'hidden' }}>
+          <div className="evidence-card comic-panel" style={{ padding: 0, overflow: 'hidden', position: 'relative' }}>
             <img 
               src="/assets/screenshot_catmanager.JPG" 
               alt="PurrfectManager Application Interface" 
               style={{ width: '100%', height: 'auto', display: 'block' }}
             />
-          </div>
-        </section>
-
-        {/* Overview Section */}
-        <section className="evidence-section">
-          <div className="evidence-section-header">
-            <h2 className="evidence-section-title">
-              <Database size={24} />
-              Overview
-            </h2>
-            <p className="evidence-section-subtitle">A comprehensive cat shelter management system built with React, TypeScript, and Back4App</p>
-          </div>
-          
-          <div className="evidence-card comic-panel" style={{ marginBottom: 'var(--spacing-xl)' }}>
-            <p className="evidence-card-text" style={{ fontSize: '1rem', lineHeight: '1.8' }}>
-              {overview.intro}
-            </p>
+            <div className="about-portrait__monologue">
+              <div className="monologue-box">
+                "PurrfectManager is a modern, full-featured web application designed to help animal shelters manage their cat inventory, track medical records, handle sponsor relationships, and maintain detailed records. The application provides an intuitive interface with real-time data synchronization and responsive design for desktop and mobile use."
+              </div>
+            </div>
           </div>
         </section>
 

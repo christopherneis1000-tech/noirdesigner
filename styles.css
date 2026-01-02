@@ -99,10 +99,10 @@ body::before {
 .monologue-box {
   background-color: var(--accent-yellow);
   color: #000;
-  padding: 12px 20px;
+  padding: 16px 20px 52px 20px;
   font-family: 'Special Elite', monospace;
-  font-size: 0.9rem;
-  line-height: 1.4;
+  font-size: 1.05rem;
+  line-height: 1.7;
   box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
   border: 2px solid #000;
   position: relative;
@@ -386,6 +386,7 @@ body::before {
   flex-direction: column;
   background-color: #0f0d0b;
   border: 4px solid black;
+  position: relative;
 }
 
 .about-portrait__header {
@@ -533,7 +534,6 @@ body::before {
   grid-template-columns: 1fr;
   gap: var(--spacing-xl);
   padding-top: var(--spacing-xl);
-  border-top: 2px solid rgba(0,0,0,0.2);
 }
 
 .about-dossier__stat-title {
@@ -749,7 +749,7 @@ body::before {
 
 .case-item__impact-value {
   font-family: 'Special Elite', monospace;
-  font-size: 0.875rem;
+  font-size: 1.125rem;
   color: white;
   font-weight: bold;
 }
@@ -1518,6 +1518,26 @@ body::before {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
   }
+
+  .monologue-box {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    padding: 10px 14px 14px 14px;
+  }
+
+  .about-portrait__monologue {
+    left: var(--spacing-sm);
+    right: var(--spacing-sm);
+    bottom: var(--spacing-sm);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .monologue-box {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    padding: 14px 18px 18px 18px;
+  }
 }
 
 /* Footer Component */
@@ -1697,10 +1717,6 @@ body::before {
     font-size: 4.5rem;
   }
   
-  .about-section {
-    grid-template-columns: 60fr 40fr;
-  }
-  
   .about-dossier__stats {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1737,6 +1753,10 @@ body::before {
 @media (min-width: 1024px) {
   .hero__title {
     font-size: 6rem;
+  }
+  
+  .about-section {
+    grid-template-columns: 60fr 40fr;
   }
   
   .case-item__content {

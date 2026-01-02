@@ -20,11 +20,11 @@ const About: React.FC = () => {
             />
             {/* Soft shadow to blend image into the frame */}
             <div className="about-portrait__shadow"></div>
-            
-            <div className="about-portrait__monologue">
-                <div className="monologue-box">
-                    "Manchmal starrt der Monitor zurück. Und er blinzelt nie."
-                </div>
+        </div>
+        
+        <div className="about-portrait__monologue">
+            <div className="monologue-box">
+                "Ich jage keine Geister. Ich jage tote Links, gebrochene Layouts und User, die sich im Dunkeln verloren haben. Designer, Entwickler, Problem-Solver – mit einem Auge für Details und einem zweiten für das große Ganze."
             </div>
         </div>
       </div>
@@ -48,14 +48,6 @@ const About: React.FC = () => {
                 THE DETECTIVE
             </h2>
             
-            {/* About Text */}
-            <div className="about-dossier__text">
-                <p className="about-dossier__paragraph">
-                    Ich jage keine Geister. Ich jage tote Links, gebrochene Layouts und User, die sich im Dunkeln verloren haben. Designer, Entwickler, Problem-Solver – mit einem Auge für Details und einem zweiten für das große Ganze.
-                </p>
-                
-            </div>
-
             {/* Stats Section */}
             <div className="about-dossier__stats">
                 <div>
